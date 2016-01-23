@@ -4,12 +4,11 @@ import copy
 import random
 import time
 
-# from helpers.point import Point
 from helpers.collection import Collection
 from helpers import get_best_point
-from helpers.test_functions import evaluate
 
-class DifferentialEvolution:
+
+class DifferentialEvolution(object):
     def __init__(self, num_iterations=10, CR=0.4, F=0.48, dim=2):
         random.seed()
         self.num_iterations = num_iterations
@@ -34,19 +33,19 @@ class DifferentialEvolution:
                 if ri < self.CR or iy == R:
                     y.coords[iy] = a.coords[iy] + self.F * (b.coords[iy] - c.coords[iy])
 
-            y.z = evaluate(y.coords)
+            y.evaluate_point()
             if y.z < x.z:
                 self.population.points[ix] = y
         self.iteration += 1
 
     def simulate(self):
         pnt = get_best_point(self.population.points)
-        print "Initial best value: " + str(pnt.z)
+        print("Initial best value: " + str(pnt.z))
         while self.iteration < self.num_iterations:
             self.iterate()
 
         pnt = get_best_point(self.population.points)
-        print "Final best value: " + str(pnt.z)
+        print("Final best value: " + str(pnt.z))
         return pnt.z
 
 
@@ -60,7 +59,7 @@ if __name__ == '__main__':
         de = DifferentialEvolution(num_iterations=100, dim=2, CR=0.4, F=0.48)
         val += de.simulate()
         if print_time:
-            print time.clock() - start
+            print("")
+            print(time.clock() - start)
 
-    print "Final average of all runs: ", (val / number_of_runs)
-
+    print("Final average of all runs: "), (val / number_of_runs)

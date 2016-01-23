@@ -12,13 +12,13 @@ class Collection:
         self.num_points = num_points
         for ix in xrange(num_points):
             new_point = Point(dim=dim, upper_limit=upper_limit,
-                    lower_limit=lower_limit)
+                              lower_limit=lower_limit)
             new_point.generate_random_point()
             self.points.append(copy.deepcopy(new_point))
 
     def generate_neighbour_collection(self):
         neighbour = copy.deepcopy(self)
-        
+
         for ix in xrange(self.num_points):
             neighbour.points[ix].generate_neighbour()
 
@@ -26,4 +26,4 @@ class Collection:
 
 
 if __name__ == '__main__':
-    print "Collection class defined in this script"
+    print("Collection class defined in this script")

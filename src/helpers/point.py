@@ -1,9 +1,10 @@
 __author__ = 'Shubham Dokania'
 
 import copy
+
 import numpy as np
 
-from test_functions import  evaluate, Function
+from test_functions import evaluate
 
 
 class Point:
@@ -24,7 +25,7 @@ class Point:
 
     def generate_neighbour(self):
         for ix in xrange(self.dim):
-            offset = (2*np.random.random() - 1.0) * 0.5
+            offset = (2 * np.random.random() - 1.0) * 0.5
             self.coords[ix] += offset
             if self.coords[ix] < self.range_lower_limit:
                 self.coords[ix] = self.range_lower_limit
@@ -33,7 +34,9 @@ class Point:
 
         self.z = evaluate(self.coords)
 
+    def evaluate_point(self):
+        self.z = evaluate(self.coords)
+
 
 if __name__ == '__main__':
-    print "Point class defined in this script"
-
+    print("Point class defined in this script")

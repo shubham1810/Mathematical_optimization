@@ -29,5 +29,4 @@ class Function:
 
 
 if __name__ == '__main__':
-    print "A collection of several Test functions for optimizations"
-
+    print("A collection of several Test functions for optimizations")

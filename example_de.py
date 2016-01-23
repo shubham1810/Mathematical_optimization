@@ -15,7 +15,7 @@ if __name__ == '__main__':
         de = DE.DifferentialEvolution(num_iterations=100, dim=2, CR=0.4, F=0.48)
         val += de.simulate()
         if print_time:
-            print time.clock() - start
+            print(time.clock() - start)
 
-    print "Final average of all runs: ", (val / number_of_runs)
+    print("Final average of all runs: "), (val / number_of_runs)
 
