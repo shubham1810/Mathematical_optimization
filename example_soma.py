@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     for i in xrange(number_of_runs):
         start = time.clock()
-        soma = SOMA.SOMA(num_iterations=100, dim=2)
+        soma = SOMA.SOMA(num_iterations=1000, dim=2)
         val += soma.simulate()
         if print_time:
             print(time.clock() - start)

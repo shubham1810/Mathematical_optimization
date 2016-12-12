@@ -26,4 +26,4 @@ class Collection:
 
 
 if __name__ == '__main__':
-    print("Collection class defined in this script")
+    print("Collection classes defined in this script")

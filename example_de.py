@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     for i in xrange(number_of_runs):
         start = time.clock()
-        de = DE.DifferentialEvolution(num_iterations=100, dim=2, CR=0.4, F=0.48)
+        de = DE.DifferentialEvolution(num_iterations=1000, dim=2, CR=0.4, F=0.48)
         val += de.simulate()
         if print_time:
             print(time.clock() - start)

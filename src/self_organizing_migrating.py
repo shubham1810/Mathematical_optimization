@@ -9,7 +9,7 @@ from helpers import get_best_point
 
 
 class SOMA(object):
-    def __init__(self, path_length=2.0, step_length=0.2, perturbation=0.4, num_iterations=10, dim=2):
+    def __init__(self, path_length=2.0, step_length=0.1, perturbation=0.4, num_iterations=10, dim=2):
         random.seed()
         self.dim = dim
         self.pathLength = path_length
@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
     for i in xrange(number_of_runs):
         start = time.clock()
-        soma = SOMA(num_iterations=100, dim=2)
+        soma = SOMA(num_iterations=1000, dim=2)
         val += soma.simulate()
         if print_time:
             print(time.clock() - start)
